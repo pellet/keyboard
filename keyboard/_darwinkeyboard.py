@@ -199,7 +199,7 @@ class KeyMap(object):
             k_layout = Carbon.TISGetInputSourceProperty(klis, kTISPropertyUnicodeKeyLayoutData)
         k_layout_size = Carbon.CFDataGetLength(k_layout)
         k_layout_buffer = ctypes.create_string_buffer(k_layout_size) # TODO - Verify this works instead of initializing with empty string
-        Carbon.CFDataGetBytes(k_layout, CFRange(0, k_layout_size), ctypes.byref(k_layout_buffer))
+        #Carbon.CFDataGetBytes(k_layout, CFRange(0, k_layout_size), ctypes.byref(k_layout_buffer))
 
         # Generate character representations of key codes
         for key_code in range(0, 128):
